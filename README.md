@@ -21,7 +21,7 @@ Diploma
 
 ## Доменное имя бекенда
 
-diploma.nomoredomains.club
+api.diploma.nomoredomains.club
 
 ## IP сервера
 

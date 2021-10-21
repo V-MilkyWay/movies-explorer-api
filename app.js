@@ -21,8 +21,10 @@ const app = express();
 // Настройки cors
 app.use(cors({
   origin: [
-    'https://your.mesto.nomoredomains.club',
-    'http://your.mesto.nomoredomains.club',
+    'https://diploma.nomoredomains.club',
+    'http://diploma.nomoredomains.club',
+    'https://api.diploma.nomoredomains.club',
+    'http://api.diploma.nomoredomains.club',
     'http://localhost:3001',
     'https://localhost:3001',
     'http://localhost:3000',
