@@ -7,15 +7,14 @@ const {
   infoAboutUser,
 } = require('../controllers/users');
 
-
 routerUser.get('/users/me', infoAboutUser);
 
 routerUser.patch('/users/me', celebrate({
   body: Joi.object().keys({
     name: Joi.string().required().min(2).max(30),
+    email: Joi.string().required().email(),
   }),
 }), updateProfile);
-
 
 // экспортируем router
 module.exports = routerUser;

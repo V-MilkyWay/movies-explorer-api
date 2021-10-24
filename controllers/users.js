@@ -55,11 +55,12 @@ module.exports.infoAboutUser = (req, res, next) => {
 };
 
 module.exports.updateProfile = (req, res, next) => {
-  const { name } = req.body;
+  const { name, email } = req.body;
   // обновим имя найденного по _id пользователя
   User.findByIdAndUpdate(req.user._id,
     {
       name,
+      email,
     },
     {
       new: true, // обработчик then получит на вход обновлённую запись
@@ -124,7 +125,7 @@ module.exports.login = (req, res, next) => {
         secure: false,
       })
         .status(200)
-        .send({ token, message: 'Пользователь успешно зарегистрирован' });
+        .send({ token, message: 'Вход выполнен успешно!' });
     })
     .catch(next);
 };
