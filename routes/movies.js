@@ -14,7 +14,7 @@ routerMovies.post('/movies', celebrate({
   body: Joi.object().keys({
     country: Joi.string().required().min(2).max(50),
     director: Joi.string().required().min(2).max(50),
-    duration: Joi.string().required().min(2).max(50),
+    duration: Joi.number().required().min(2).max(50),
     year: Joi.string().required().min(2).max(50),
     description: Joi.string().required().min(2).max(800),
     image: Joi.string().required().pattern(/^(http|https):\/\/[^ "]+\.[^ "]+$/),
@@ -22,7 +22,7 @@ routerMovies.post('/movies', celebrate({
     nameRU: Joi.string().required().min(2).max(30),
     nameEN: Joi.string().required().min(2).max(30),
     thumbnail: Joi.string().required().pattern(/^(http|https):\/\/[^ "]+\.[^ "]+$/),
-    movieId: Joi.string().required(),
+    movieId: Joi.number().required(),
   }),
 }), createMovie);
 
