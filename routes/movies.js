@@ -14,7 +14,7 @@ routerMovies.post('/movies', celebrate({
   body: Joi.object().keys({
     country: Joi.string().required().min(2).max(50),
     director: Joi.string().required().min(2).max(50),
-    duration: Joi.number().required().min(2).max(50),
+    duration: Joi.number().required().min(2).max(800),
     year: Joi.string().required().min(2).max(50),
     description: Joi.string().required().min(2).max(800),
     image: Joi.string().required().pattern(/^(http|https):\/\/[^ "]+\.[^ "]+$/),
