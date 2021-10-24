@@ -11,7 +11,7 @@ const routerEnters = require('./routes/enters');
 const auth = require('./middlewares/auth');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
-mongoose.connect('mongodb://localhost:27017/mestodb');
+mongoose.connect('mongodb://localhost:27017/moviesdb');
 // Слушаем 3000 порт
 const { PORT = 3001 } = process.env;
 
