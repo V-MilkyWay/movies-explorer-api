@@ -1,10 +1,35 @@
 const Movie = require('../models/movie');
 
 module.exports.createMovie = (req, res, next) => {
-  const { country, director, duration, year, description, image, trailer, nameRU, nameEN, thumbnail, movieId } = req.body;
+  const {
+    country,
+    director,
+    duration,
+    year,
+    description,
+    image,
+    trailer,
+    nameRU,
+    nameEN,
+    thumbnail,
+    movieId,
+  } = req.body;
 
-  Movie.create({ country, director, duration, year, owner: req.user, description, image, trailer, nameRU, nameEN, thumbnail, movieId })
-    .then((movie) => res.send(movie))
+  Movie.create({
+    country,
+    director,
+    duration,
+    year,
+    owner: req.user,
+
+    description,
+    image,
+    trailer,
+    nameRU,
+    nameEN,
+    thumbnail,
+    movieId,
+  }).then((movie) => res.send(movie))
     .catch((err) => {
       if (err.name === 'ValidationError') {
         // Логика обработки ошибки
@@ -31,12 +56,12 @@ module.exports.findByIdAndRemoveMovie = (req, res, next) => {
         err.statusCode = 404;
 
         next(err);
-      }  else if (req.user._id !== movie.owner.toString()) {
+      } else if (req.user._id !== movie.owner.toString()) {
         const errNew = new Error('Отказано в доступе');
         errNew.statusCode = 403;
 
         next(errNew);
-      }else {
+      } else {
         movie.remove().then(() => res.send({ data: movie }));
       }
     })
