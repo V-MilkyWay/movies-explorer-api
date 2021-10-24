@@ -125,7 +125,7 @@ module.exports.login = (req, res, next) => {
         secure: false,
       })
         .status(200)
-        .send({ token, message: 'Пользователь успешно зарегистрирован' });
+        .send({ token, message: 'Вход выполнен успешно!' });
     })
     .catch(next);
 };
