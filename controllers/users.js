@@ -86,6 +86,11 @@ module.exports.updateProfile = (req, res, next) => {
         errNew.statusCode = 400;
 
         next(errNew);
+      } else if (err.code === 11000) {
+        const errNew = new Error('Такой Email уже зарегистрирован');
+        errNew.statusCode = 409;
+
+        next(errNew);
       }
       next(err);
     });
