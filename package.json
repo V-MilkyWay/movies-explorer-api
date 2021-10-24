@@ -1,7 +1,7 @@
 {
   "name": "express-mesto",
   "version": "1.0.0",
-  "description": "",
+  "description": "My Diploma",
   "main": "app.js",
   "scripts": {
     "dev": "nodemon app.js",
