@@ -1,3 +1,5 @@
+// отделяем signup и signin
+
 const { celebrate, Joi } = require('celebrate');
 // создадим express router
 const routerEnters = require('express').Router();
