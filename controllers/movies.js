@@ -61,7 +61,11 @@ module.exports.findByIdAndRemoveMovie = (req, res, next) => {
 
         next(errNew);
       } else {
-        movie.remove().then(() => res.send({ data: movie }));
+        movie.remove()
+          .then(() => res.status(200).send({ messeage: 'Фильм удален' }))
+          .catch((err) => {
+            next(err);
+          });
       }
     })
     .catch((err) => {
@@ -71,7 +75,8 @@ module.exports.findByIdAndRemoveMovie = (req, res, next) => {
         errNew.statusCode = 400;
 
         next(errNew);
+      } else {
+        next(err);
       }
-      next(err);
     });
 };
