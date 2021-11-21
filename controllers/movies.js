@@ -21,7 +21,6 @@ module.exports.createMovie = (req, res, next) => {
     duration,
     year,
     owner: req.user,
-
     description,
     image,
     trailer,

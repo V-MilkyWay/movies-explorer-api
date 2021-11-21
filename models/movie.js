@@ -29,7 +29,6 @@ const movieSchema = new mongoose.Schema({
     type: String,
     required: true,
     minlength: 2,
-    maxlength: 800,
   },
   image: {
     type: String,
@@ -66,20 +65,20 @@ const movieSchema = new mongoose.Schema({
     required: true,
   },
   movieId: {
-    type: Number,
+    type: String,
     required: true,
   },
   nameRU: {
     type: String,
     required: true,
     minlength: 2,
-    maxlength: 30,
+    maxlength: 200,
   },
   nameEN: {
     type: String,
     required: true,
     minlength: 2,
-    maxlength: 30,
+    maxlength: 200,
   },
 });
 module.exports = mongoose.model('movie', movieSchema);
